@@ -1,0 +1,15 @@
+==================
+Simple Game
+==================
+
+game TestGame
+type Board = Array(1,1) of Int
+type Input = Int
+
+---
+
+(source_file
+  (game_definition (upperIdentifier))
+  (type_definition (upperIdentifier) (builtin_type (array_type (number) (number) (builtin_type))))
+  (type_definition (upperIdentifier) (builtin_type))
+)

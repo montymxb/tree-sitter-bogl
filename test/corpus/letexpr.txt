@@ -1,0 +1,11 @@
+==================
+Let Expr
+==================
+
+let x = 2 in x
+
+---
+
+(source_file
+  (let_expr (identifier) (number) (identifier))
+)

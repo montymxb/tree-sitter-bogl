@@ -1,0 +1,18 @@
+==================
+Negative Number
+==================
+
+-- if then else thing
+neg : Int
+neg = -24
+
+---
+
+(source_file
+  (comment)
+  (function_definition (identifier) (builtin_type)
+    (pattern
+      (identifier) (unary_expr (number))
+    )
+  )
+)

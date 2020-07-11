@@ -1,0 +1,11 @@
+==================
+Game Only
+==================
+
+game TestGame
+
+---
+
+(source_file
+  (game_definition
+  (upperIdentifier)))

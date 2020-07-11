@@ -1,0 +1,19 @@
+==================
+While
+==================
+
+-- infinite loop going through stuff
+fx : Int -> Int
+fx(x) = while True do x + 1
+
+---
+
+(source_file
+  (comment)
+  (function_definition (identifier) (builtin_type) (builtin_type)
+    (pattern
+      (identifier) (parameter_list (identifier))
+      (while_do (bool) (binary_expr (identifier) (number)))
+    )
+  )
+)

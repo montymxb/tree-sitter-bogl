@@ -1,0 +1,23 @@
+{
+  "name": "tree-sitter-bogl",
+  "version": "1.0.0",
+  "description": "BoGL support in Atom",
+  "main": "index.js",
+  "dependencies": {
+    "nan": "^2.14.1"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.16.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bogl",
+    "board",
+    "game",
+    "language"
+  ],
+  "author": "Benjamin Friedman",
+  "license": "ISC"
+}

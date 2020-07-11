@@ -1,0 +1,16 @@
+==================
+Function
+==================
+
+func : Int
+func = 32
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (builtin_type)
+    (pattern
+      (identifier)
+      (number))))
