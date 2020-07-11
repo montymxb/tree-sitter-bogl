@@ -1,18 +1,15 @@
 ==================
-Negative Number
+If Then Else
 ==================
 
 -- if then else thing
-neg : Int
-neg = -24
+let x = 2 in if x == 2 then True else False
 
 ---
 
 (source_file
   (comment)
-  (function_definition (identifier) (builtin_type)
-    (pattern
-      (identifier) (unary_expr (number))
-    )
+  (let_expr (identifier) (number)
+    (if_then_else (binary_expr (identifier) (number)) (bool) (bool))
   )
 )
