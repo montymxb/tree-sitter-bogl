@@ -2,7 +2,7 @@
   "name": "tree-sitter-bogl",
   "version": "0.0.0",
   "description": "BoGL support in Atom",
-  "repository": "https://github.com/montymxb/tree-sitter-bogl",
+  "repository": "https://github.com/montymxb/tree-sitter-bogl.git",
   "homepage": "https://github.com/montymxb/tree-sitter-bogl",
   "main": "index.js",
   "dependencies": {
