@@ -1,7 +1,9 @@
 {
   "name": "tree-sitter-bogl",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "BoGL support in Atom",
+  "repository": "https://github.com/montymxb/tree-sitter-bogl",
+  "homepage": "https://github.com/montymxb/tree-sitter-bogl",
   "main": "index.js",
   "dependencies": {
     "nan": "^2.14.1"
@@ -19,5 +21,8 @@
     "language"
   ],
   "author": "Benjamin Friedman",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
 }
