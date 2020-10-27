@@ -1,6 +1,13 @@
 module.exports = grammar({
   name: 'BoGL',
 
+  extras: $ => [
+    $.comment,
+    /[\n\s\uFEFF\u2060\u200B\u00A0\t]/
+  ],
+
+  word: $ => $.identifier,
+
   rules: {
 
     // recognize identifiers and types as known words
@@ -11,10 +18,10 @@ module.exports = grammar({
 
     _definition: $ => choice (
       $.game_definition,
+      $.board_definition,
       $.function_definition,
       $.type_definition,
-      $.let_expr,
-      $.comment
+      $.let_expr
     ),
 
     // defining a game
@@ -23,13 +30,21 @@ module.exports = grammar({
       $.upperIdentifier
     ),
 
+    // defining a board
+    board_definition: $ => prec.left(3, seq(
+      $.identifier,
+      ':',
+      'Board',
+      repeat1($.board_pattern)
+    )),
+
     // defining a function with Input & Output
     function_definition: $ => prec.left(2,seq(
       $.identifier,
       ':',
       $._type,
       optional(seq('->',$._type)), // optional input -> output
-      repeat1($.pattern)
+      $.pattern
     )),
 
     // defining a type
@@ -40,7 +55,7 @@ module.exports = grammar({
       $._type
     ),
 
-    comment: $ => /--.*\n/,
+    comment: $ => seq('--',/.*/),
 
     // BoGL types
     _type: $ => choice (
@@ -81,10 +96,31 @@ module.exports = grammar({
       $._expression
     ),
 
+    // board pattern
+    board_pattern: $ => seq(
+      $.identifier,
+      '!',
+      $.position_list,
+      '=',
+      $._expression
+    ),
+
+    // position list for board equations
+    position_list: $ => seq(
+      '(',
+      choice(
+        seq($.identifier, ',', $.identifier),
+        seq($.number, ',', $.identifier),
+        seq($.identifier, ',', $.number),
+        seq($.number, ',', $.number),
+      ),
+      ')'
+    ),
+
     // parameter listing for pattern matching
     parameter_list: $ => seq(
       '(',
-      repeat1($.identifier),
+      seq($.identifier, repeat(seq(',', $.identifier))),
       ')'
     ),
 
@@ -146,7 +182,8 @@ module.exports = grammar({
       prec.left(2, seq($._expression, '-', $._expression)),
 
       prec.left(3, seq($._expression, '*', $._expression)),
-      prec.left(3, seq($._expression, '/', $._expression))
+      prec.left(3, seq($._expression, '/', $._expression)),
+      prec.left(3, seq($._expression, '%', $._expression)),
     ),
 
     unary_expr: $ => choice(

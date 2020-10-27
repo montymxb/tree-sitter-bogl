@@ -66,6 +66,72 @@
     }
   },
   {
+    "type": "board_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "board_pattern",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "board_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_expr",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_then_else",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "position_list",
+          "named": true
+        },
+        {
+          "type": "unary_expr",
+          "named": true
+        },
+        {
+          "type": "while_do",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "builtin_type",
     "named": true,
     "fields": {},
@@ -271,6 +337,25 @@
     }
   },
   {
+    "type": "position_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -279,7 +364,7 @@
       "required": false,
       "types": [
         {
-          "type": "comment",
+          "type": "board_definition",
           "named": true
         },
         {
@@ -426,6 +511,14 @@
     }
   },
   {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -447,6 +540,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "--",
     "named": false
   },
   {
@@ -515,10 +612,6 @@
   },
   {
     "type": "bool",
-    "named": true
-  },
-  {
-    "type": "comment",
     "named": true
   },
   {

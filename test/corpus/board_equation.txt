@@ -1,0 +1,29 @@
+==================
+Board Equation
+==================
+
+-- 2 diff boards in this example
+
+-- board with 2 patterns
+board1 : Board
+board1!(x,y) = 0
+board1!(1,1) = 2
+
+-- board with 1 pattern (board_pattern (identifier) (position_list (number) (number)) (number))
+board2 : Board
+board2!(x,y) = False
+
+---
+
+(source_file
+  (comment)
+  (comment)
+  (board_definition (identifier)
+    (board_pattern (identifier) (position_list (identifier) (identifier)) (number))
+
+  )
+  (comment)
+  (board_definition (identifier)
+    (board_pattern (identifier) (position_list (identifier) (identifier)) (bool))
+  )
+)

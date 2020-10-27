@@ -1,4 +1,4 @@
-name: 'Board Game Language'
+name: 'BoGL'
 scopeName: 'bogl'
 type: 'tree-sitter'
 parser: 'tree-sitter-bogl'
