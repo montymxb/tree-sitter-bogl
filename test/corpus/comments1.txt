@@ -1,0 +1,29 @@
+==================
+Comments 1
+==================
+
+-- this is an example of a game
+game TestGame
+
+-- 1st comment
+
+v1 : Int
+v1 = 1
+
+{-
+  another comment
+-}
+
+v2 : Int
+v2 = 2
+
+-- another
+
+{- one more -}
+
+{- last
+-- one
+-- here
+-}
+---
+(source_file (comment) (game (game_def (upperIdentifier)) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (number))))) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (number)))))) (comment) (comment) (comment))

@@ -1,0 +1,13 @@
+==================
+Board 2
+==================
+game While
+
+b : Board
+b!(x,y) = 1
+b!(1,2) = 2
+b!(x,3) = 92
+b!(3,y) = -1
+
+---
+(source_file (game (game_def (upperIdentifier)) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (board_eq (identifier) (pos (identifier)) (pos (identifier)) (expr (aexpr (number)))) (board_eq (identifier) (pos (number)) (pos (number)) (expr (aexpr (number)))) (board_eq (identifier) (pos (identifier)) (pos (number)) (expr (aexpr (number)))) (board_eq (identifier) (pos (number)) (pos (identifier)) (expr (aexpr (number)))))))) 

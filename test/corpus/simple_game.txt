@@ -7,9 +7,4 @@ type Board = Array(1,1) of Int
 type Input = Int
 
 ---
-
-(source_file
-  (game_definition (upperIdentifier))
-  (type_definition (upperIdentifier) (builtin_type (array_type (number) (number) (builtin_type))))
-  (type_definition (upperIdentifier) (builtin_type))
-)
+(source_file (game (game_def (upperIdentifier)) (type_def (board_type_def (array_type (number) (number) (type (btype (builtin_type)))))) (type_def (gen_type_def (upperIdentifier) (type (btype (builtin_type)))))))

@@ -1,0 +1,13 @@
+==================
+Board 3
+==================
+game B3
+
+b : Board
+b!(x,y) = Empty
+
+g : Player
+g = A
+
+---
+(source_file (game (game_def (upperIdentifier)) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (board_eq (identifier) (pos (identifier)) (pos (identifier)) (expr (aexpr (upperIdentifier)))))) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (upperIdentifier)))))))

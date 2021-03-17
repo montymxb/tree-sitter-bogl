@@ -1,0 +1,13 @@
+==================
+Board 1
+==================
+game While
+
+type Board = Array(1,1) of Int
+
+-- board test
+b : Board
+b!(x,y) = 1
+
+---
+(source_file (game (game_def (upperIdentifier)) (type_def (board_type_def (array_type (number) (number) (type (btype (builtin_type)))))) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (board_eq (identifier) (pos (identifier)) (pos (identifier)) (expr (aexpr (number)))))))) 

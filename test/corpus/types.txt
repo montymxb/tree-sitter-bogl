@@ -1,0 +1,19 @@
+==================
+Types
+==================
+
+game ConnectFour
+
+type A = Int
+type B = Bool
+type C = (Int,Int)
+type D = (Int,Bool)
+type E = (Int,(Bool,Bool))
+type F = (Int,Bool,Int)
+type G = {X}
+type H = {Y,Z}
+type I = (G,H)
+
+
+---
+(source_file (game (game_def (upperIdentifier)) (type_def (gen_type_def (upperIdentifier) (type (btype (builtin_type))))) (type_def (gen_type_def (upperIdentifier) (type (btype (builtin_type))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (builtin_type)) (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)) (btype (builtin_type))))))) (type_def (gen_type_def (upperIdentifier) (type (etype (upperIdentifier))))) (type_def (gen_type_def (upperIdentifier) (type (etype (upperIdentifier) (upperIdentifier))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (upperIdentifier)) (btype (upperIdentifier))))))))) 

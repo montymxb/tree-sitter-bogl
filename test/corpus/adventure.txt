@@ -1,0 +1,70 @@
+==================
+Adventure
+==================
+
+--
+-- A basic adventure game,
+-- where a player can be moved on a 5x5
+-- board by entering WASD
+--
+game AdventureGame
+
+-- Directions the player can enter
+-- E allows exiting the game
+type Direction = {W,A,S,D,E}
+
+-- X is a wall, O is a path, P is a player
+type Entity = {X,O,P}
+
+type Board = Array(5,5) of Entity
+type Input = Direction
+
+-- size of the board
+size : Int
+size = 5
+
+-- initial board of all O's
+board : Board
+board!(x,y) = O
+
+--
+-- To play the game run as follows in the interpreter:
+-- play(1,1)
+--
+play : (Int,Int) -> Board
+play(x,y) = let dir = input in
+            if dir == S then
+					if y+1 > size then
+						play(x,y)
+					else
+						let bb = place(P,board,(x,y+1)) in
+						play(x,y+1)
+				else
+					if dir == W then
+						if y-1 < 1 then
+							play(x,y)
+						else
+							let bb = place(P,board,(x,y-1)) in
+							play(x,y-1)
+					else
+						if dir == A then
+							if x-1 < 1 then
+								play(x,y)
+							else
+								let bb = place(P,board,(x-1,y)) in
+								play(x-1,y)
+						else
+							if dir == D then
+								if x+1 > size then
+									play(x,y)
+								else
+									let bb = place(P,board,(x+1,y)) in
+									play(x+1,y)
+							else
+								if dir == E then
+									board
+								else
+									play(x,y)
+
+---
+(source_file (comment) (comment) (comment) (comment) (comment) (game (game_def (upperIdentifier)) (comment) (comment) (type_def (gen_type_def (upperIdentifier) (type (etype (upperIdentifier) (upperIdentifier) (upperIdentifier) (upperIdentifier) (upperIdentifier))))) (comment) (type_def (gen_type_def (upperIdentifier) (type (etype (upperIdentifier) (upperIdentifier) (upperIdentifier))))) (type_def (board_type_def (array_type (number) (number) (type (btype (upperIdentifier)))))) (type_def (gen_type_def (upperIdentifier) (type (btype (upperIdentifier))))) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (number))))) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (board_eq (identifier) (pos (identifier)) (pos (identifier)) (expr (aexpr (upperIdentifier)))))) (comment) (comment) (comment) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (let_expr (identifier) (expr (aexpr (identifier))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (conditional (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (binop) (expr (aexpr (identifier))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (let_expr (identifier) (expr (app (identifier) (args (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier))) (expr (tuple (expr (aexpr (identifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (conditional (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (binop) (expr (aexpr (number))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (let_expr (identifier) (expr (app (identifier) (args (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier))) (expr (tuple (expr (aexpr (identifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (conditional (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (binop) (expr (aexpr (number))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (let_expr (identifier) (expr (app (identifier) (args (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier))) (expr (tuple (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (expr (aexpr (identifier)))))))) (expr (app (identifier) (args (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (expr (aexpr (identifier)))))))))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (conditional (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (binop) (expr (aexpr (identifier))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (let_expr (identifier) (expr (app (identifier) (args (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier))) (expr (tuple (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (expr (aexpr (identifier)))))))) (expr (app (identifier) (args (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (expr (aexpr (identifier)))))))))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (aexpr (identifier))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))))))))))))))))))) 

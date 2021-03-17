@@ -1,19 +1,11 @@
 ==================
 While
 ==================
+game While
 
 -- infinite loop going through stuff
 fx : Int -> Int
 fx(x) = while True do x + 1
 
 ---
-
-(source_file
-  (comment)
-  (function_definition (identifier) (builtin_type) (builtin_type)
-    (pattern
-      (identifier) (parameter_list (identifier))
-      (while_do (bool) (binary_expr (identifier) (number)))
-    )
-  )
-)
+(source_file (game (game_def (upperIdentifier)) (comment) (value_def (signature (identifier) (vtype (ftype (btype (builtin_type)) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier)) (expr (while_loop (expr (aexpr (upperIdentifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))))))))) 

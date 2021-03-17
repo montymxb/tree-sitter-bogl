@@ -1,15 +1,11 @@
 ==================
 If Then Else
 ==================
+game ITE
 
 -- if then else thing
-let x = 2 in if x == 2 then True else False
+v : Bool
+v = let x = 2 in if x == 2 then True else False
 
 ---
-
-(source_file
-  (comment)
-  (let_expr (identifier) (number)
-    (if_then_else (binary_expr (identifier) (number)) (bool) (bool))
-  )
-)
+(source_file (game (game_def (upperIdentifier)) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (let_expr (identifier) (expr (aexpr (number))) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number))))) (expr (aexpr (upperIdentifier))) (expr (aexpr (upperIdentifier)))))))))))

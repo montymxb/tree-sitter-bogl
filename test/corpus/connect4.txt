@@ -1,0 +1,68 @@
+==================
+Connect Four Sans Board
+==================
+game ConnectFourSansBoard
+
+type Player = {A, B}
+type Position = (Int, Int)
+
+-- Board and input type definitions
+--
+type Board = Array (6,7) of {A, B, Empty}
+type Input = Int
+
+type Result = Player & {Tie}
+
+-- grabs a position from a triple
+grabPos : (Board, Int, Int) -> Position
+grabPos(b,column,row) = (column, row)
+
+-- returns the connect 4 position based on contents of a column
+dropPiece : (Board, Int, Int) -> (Board, Int, Int)
+dropPiece(b,column,count) = while not(b ! (column,count) == Empty)
+    do dropPiece(b,column,count - 1)
+
+-- We need to convert column input into positions
+--
+col2pos : (Board,Int) -> (Int,Int)
+col2pos(b,c) = grabPos(dropPiece(b,c,7))
+
+goFirst : Player
+goFirst = A
+
+nextAB : Player -> Player
+nextAB(p) = if p == A then B else A
+
+fourInARow : Board -> Bool
+fourInARow(b) = or(inARow(4,A,b),inARow(4,B,b))
+
+-- Game ending: game-over condition and game outcome
+--
+gameOver : Board -> Bool
+gameOver(b) = or(fourInARow(b),isFull(b))
+
+outcome : (Player, Board) -> Result
+outcome(p,b) = if inARow(4,A,b) then A else
+               if inARow(4,B,b) then B else Tie
+
+-- Predefined operations
+--
+isValid : (Board, Position) -> Bool
+isValid(b,p) = if b!p == Empty then True else False
+
+-- Game loop
+--
+tryMove : (Player, Board) -> (Player, Board)
+tryMove(p,b) = let pos = col2pos(b, input) in
+                   if isValid(b,pos) then (nextAB(p), place(p,b,pos))
+                                     else (p, b)
+
+loop : (Player, Board) -> (Player, Board)
+loop(p,b) = while not(gameOver(b)) do tryMove(p,b)
+
+play : (Player, Board) -> Result
+play(a,b) = outcome(loop(a,b))
+
+
+---
+(source_file (game (game_def (upperIdentifier)) (type_def (gen_type_def (upperIdentifier) (type (etype (upperIdentifier) (upperIdentifier))))) (type_def (gen_type_def (upperIdentifier) (type (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (comment) (comment) (type_def (board_type_def (array_type (number) (number) (type (etype (upperIdentifier) (upperIdentifier) (upperIdentifier)))))) (type_def (gen_type_def (upperIdentifier) (type (btype (builtin_type))))) (type_def (gen_type_def (upperIdentifier) (type (type (btype (builtin_type))) (etype (upperIdentifier))))) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)) (btype (builtin_type)))) (btype (upperIdentifier))))) (equation (identifier) (parameter_list (identifier) (identifier) (identifier)) (expr (tuple (expr (aexpr (identifier))) (expr (aexpr (identifier))))))) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)) (btype (builtin_type)))) (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)) (btype (builtin_type))))))) (equation (identifier) (parameter_list (identifier) (identifier) (identifier)) (expr (while_loop (expr (app (identifier) (args (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (tuple (expr (aexpr (identifier))) (expr (aexpr (identifier))))))) (binop) (expr (aexpr (upperIdentifier)))))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier))) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))))) (comment) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (app (identifier) (args (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier))) (expr (aexpr (number))))))))))) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (upperIdentifier))))) (value_def (signature (identifier) (vtype (ftype (btype (builtin_type)) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier)) (expr (conditional (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (upperIdentifier))))) (expr (aexpr (upperIdentifier))) (expr (aexpr (upperIdentifier))))))) (value_def (signature (identifier) (vtype (ftype (btype (builtin_type)) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier)) (expr (app (identifier) (args (expr (app (identifier) (args (expr (aexpr (number))) (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier)))))) (expr (app (identifier) (args (expr (aexpr (number))) (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier))))))))))) (comment) (comment) (value_def (signature (identifier) (vtype (ftype (btype (builtin_type)) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier)) (expr (app (identifier) (args (expr (app (identifier) (args (expr (aexpr (identifier)))))) (expr (app (identifier) (args (expr (aexpr (identifier))))))))))) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (upperIdentifier))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (conditional (expr (app (identifier) (args (expr (aexpr (number))) (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier)))))) (expr (aexpr (upperIdentifier))) (expr (conditional (expr (app (identifier) (args (expr (aexpr (number))) (expr (aexpr (upperIdentifier))) (expr (aexpr (identifier)))))) (expr (aexpr (upperIdentifier))) (expr (aexpr (upperIdentifier))))))))) (comment) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (upperIdentifier)))) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (conditional (expr (infix_app (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (identifier))))) (binop) (expr (aexpr (upperIdentifier))))) (expr (aexpr (upperIdentifier))) (expr (aexpr (upperIdentifier))))))) (comment) (comment) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (let_expr (identifier) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (conditional (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))) (expr (tuple (expr (app (identifier) (args (expr (aexpr (identifier)))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier))) (expr (aexpr (identifier)))))))) (expr (tuple (expr (aexpr (identifier))) (expr (aexpr (identifier))))))))))) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (tuple_type (btype (builtin_type)) (btype (builtin_type))))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (while_loop (expr (app (identifier) (args (expr (app (identifier) (args (expr (aexpr (identifier))))))))) (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))))))) (value_def (signature (identifier) (vtype (ftype (btype (tuple_type (btype (builtin_type)) (btype (builtin_type)))) (btype (upperIdentifier))))) (equation (identifier) (parameter_list (identifier) (identifier)) (expr (app (identifier) (args (expr (app (identifier) (args (expr (aexpr (identifier))) (expr (aexpr (identifier)))))))))))))

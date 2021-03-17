@@ -1,0 +1,19 @@
+==================
+Test Game 1
+==================
+
+-- this is an example of a game
+game TestGame
+type Board = Array(1,1) of Int
+type Input = Bool
+
+-- test func 2
+f : Int
+f = 32
+
+-- another cool func
+another_CoolFunc32Name : Int -> Bool
+another_CoolFunc32Name(x) = x > 0
+
+---
+(source_file (comment) (game (game_def (upperIdentifier)) (type_def (board_type_def (array_type (number) (number) (type (btype (builtin_type)))))) (type_def (gen_type_def (upperIdentifier) (type (btype (builtin_type))))) (comment) (value_def (signature (identifier) (vtype (btype (builtin_type)))) (equation (identifier) (expr (aexpr (number))))) (comment) (value_def (signature (identifier) (vtype (ftype (btype (builtin_type)) (btype (builtin_type))))) (equation (identifier) (parameter_list (identifier)) (expr (infix_app (expr (aexpr (identifier))) (binop) (expr (aexpr (number)))))))))

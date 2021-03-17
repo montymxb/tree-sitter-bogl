@@ -12,7 +12,7 @@
     "tree-sitter-cli": "^0.16.8"
   },
   "scripts": {
-    "test": "tree-sitter generate & tree-sitter test"
+    "test": "tree-sitter generate && tree-sitter test"
   },
   "keywords": [
     "bogl",
