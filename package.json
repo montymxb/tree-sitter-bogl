@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-bogl",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "BoGL support in Atom",
   "repository": "https://github.com/montymxb/tree-sitter-bogl.git",
   "homepage": "https://github.com/montymxb/tree-sitter-bogl",
@@ -18,9 +18,12 @@
     "bogl",
     "board",
     "game",
-    "language"
+    "language",
+    "grammar",
+    "syntax",
+    "highlighter"
   ],
-  "author": "Benjamin Friedman",
+  "author": "Benjamin Wilson Friedman",
   "license": "ISC",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
