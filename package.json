@@ -41,7 +41,7 @@
       "injections": "queries/injections.scm",
       "first-line-regex": "game",
       "content-regex": "game [A-Z]",
-      "injection-regex": "bogl"
+      "injection-regex": "bogl|bgl"
     }
   ]
 }
