@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-bogl",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "Tree Sitter Parser for BoGL",
   "repository": "https://github.com/montymxb/tree-sitter-bogl.git",
   "homepage": "https://github.com/montymxb/tree-sitter-bogl",
