@@ -1,4 +1,4 @@
 game Test
 
 v : Int
-v = 2
+v = let x = 2 in x

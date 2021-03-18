@@ -4,6 +4,8 @@
 (type) @type
 (number) @number
 
+(comment) @comment
+
 [
   "+"
   "-"
