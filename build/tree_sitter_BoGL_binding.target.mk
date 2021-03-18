@@ -7,12 +7,9 @@ DEFS_Debug := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION' \
 	'-DDEBUG' \
 	'-D_DEBUG' \
@@ -22,7 +19,7 @@ DEFS_Debug := \
 CFLAGS_Debug := \
 	-O0 \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.7 \
 	-arch x86_64 \
 	-Wall \
 	-Wendif-labels \
@@ -48,13 +45,13 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/include/node \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/src \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/openssl/config \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/openssl/openssl/include \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/uv/include \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/zlib \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/v8/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/include/node \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/src \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/openssl/config \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/openssl/openssl/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/uv/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/zlib \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/src
 
@@ -63,19 +60,16 @@ DEFS_Release := \
 	'-DUSING_UV_SHARED=1' \
 	'-DUSING_V8_SHARED=1' \
 	'-DV8_DEPRECATION_WARNINGS=1' \
-	'-DV8_DEPRECATION_WARNINGS' \
-	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
 	'-D_DARWIN_USE_64_BIT_INODE=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
-	'-DOPENSSL_THREADS' \
 	'-DBUILDING_NODE_EXTENSION'
 
 # Flags passed to all source files.
 CFLAGS_Release := \
 	-Os \
 	-gdwarf-2 \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.7 \
 	-arch x86_64 \
 	-Wall \
 	-Wendif-labels \
@@ -101,13 +95,13 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/include/node \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/src \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/openssl/config \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/openssl/openssl/include \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/uv/include \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/zlib \
-	-I/Users/Bfriedman/.atom/.node-gyp/Library/Caches/node-gyp/6.1.12/deps/v8/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/include/node \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/src \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/openssl/config \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/openssl/openssl/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/uv/include \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/zlib \
+	-I/Users/Bfriedman/.node-gyp/11.15.0/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/src
 
@@ -154,7 +148,7 @@ LDFLAGS_Debug := \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.7 \
 	-arch x86_64 \
 	-L$(builddir) \
 	-stdlib=libc++
@@ -168,7 +162,7 @@ LDFLAGS_Release := \
 	-undefined dynamic_lookup \
 	-Wl,-no_pie \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.7 \
 	-arch x86_64 \
 	-L$(builddir) \
 	-stdlib=libc++

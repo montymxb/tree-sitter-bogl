@@ -1,1 +1,4 @@
 game Test
+
+v : Int
+v = 25
