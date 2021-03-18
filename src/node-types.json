@@ -151,11 +151,6 @@
     "fields": {}
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "conditional",
     "named": true,
     "fields": {},
