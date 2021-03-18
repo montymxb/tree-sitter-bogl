@@ -1,0 +1,4 @@
+game Test
+
+v : Int
+v = 2

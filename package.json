@@ -4,12 +4,12 @@
   "description": "BoGL support in Atom",
   "repository": "https://github.com/montymxb/tree-sitter-bogl.git",
   "homepage": "https://github.com/montymxb/tree-sitter-bogl",
-  "main": "index.js",
+  "main": "bindings/node",
   "dependencies": {
     "nan": "^2.14.1"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.16.8"
+    "tree-sitter-cli": "^0.19.3"
   },
   "scripts": {
     "test": "tree-sitter generate && tree-sitter test"
@@ -27,5 +27,17 @@
   "license": "ISC",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.bgl",
+      "file-types": [
+        "bgl",
+        "bglp",
+        "bogl"
+      ],
+      "first-line-regex": "game ([A-Z]|[A-Z][a-zA-Z0-9_]+)",
+      "injection-regex": "^(bgl|bogl)$"
+    }
+  ]
 }
