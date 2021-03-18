@@ -3,7 +3,7 @@ scopeName: 'source.bgl'
 fileTypes: ['bgl','bglp']
 fileLineRegex: 'game'
 type: 'tree-sitter'
-parser: 'tree-sitter-bogl'
+parser: '../index'
 
 scopes:
   'number': 'type.integer'

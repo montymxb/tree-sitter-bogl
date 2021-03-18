@@ -21,7 +21,7 @@
     "language",
     "grammar",
     "syntax",
-    "highlighter"
+    "treesitter"
   ],
   "author": "Benjamin Wilson Friedman",
   "license": "ISC",
