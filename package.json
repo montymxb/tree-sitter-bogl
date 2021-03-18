@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-bogl",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "BoGL support in Atom",
   "repository": "https://github.com/montymxb/tree-sitter-bogl.git",
   "homepage": "https://github.com/montymxb/tree-sitter-bogl",
